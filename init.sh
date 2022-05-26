@@ -18,8 +18,6 @@ systemctl enable rc-local.service
 systemctl start rc-local.service
 ## ssh连接加速
 sed -i -r -e "/^UseDNS/d" -e "/#UseDNS/a UseDNS no" /etc/ssh/sshd_config
-## 允许root登录
-sed -ri 's/^/#/;s/sleep 10"\s+/&\n/' /root/.ssh/authorized_keys
 systemctl reload sshd
 
 ## 设置最大打开文件数
