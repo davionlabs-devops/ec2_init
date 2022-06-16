@@ -1,0 +1,26 @@
+{
+  "bootstrap_expect": 1,
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0",
+  "disable_host_node_id": true,
+  "data_dir": "/consul/data",
+  "datacenter": "dc1",
+  "domain": "cluster.local",
+  "retry_join": [
+    "10.143.30.12"
+  ],
+  "service": {
+      "name": "node-exporter",
+      "port": 9100
+  },
+  "server": true,
+  "telemetry": {
+    "prometheus_retention_time": "5m"
+  },
+  "log_file": "/consul/data/logs",
+  "log_rotate_bytes": 300000000,
+  "log_rotate_duration": "360h",
+  "log_level": "info",
+  "encrypt": "gEjZMbDxnA5UDS5DJRI3Nn5KvOwdVa46jneHK0gFDa8=",
+  "ui": true
+}
