@@ -57,4 +57,13 @@ fi
 
 
 ## 配置可以被jumpserver统一root管理用户连接
-##待定
+mkdir -p /root/.ssh
+touch /root/.ssh/authorized_keys
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
+sed -i "/jumpserver@davionlabs.com/d" /root/.ssh/authorized_keys
+cat >> /root/.ssh/authorized_keys <<\EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEwo5BIoz9FbcfxFBii+bTpXARCCH4Vz2M1XgUIznLtQ0hzCxhTUIGwhtWBMRgHL04y2D3o7i9LbnRD2zKxyS1FU8+yl1D4NtfAZ2i5RRfOazu3Ptk+Bs99squ4TNWBnMC5vkv8zTmx5b9HvhL82WQEtAQt5qxv2tiBwLL3htCcYEuRG7g85Jdt9ASPNicBLcb+nAC7CFuHpb+vjxr27oqhY5tMAfK2CvQ63iCc+xiyRz4tu7mgSqfv1CEF3VNJP2WKn1AGJEwjlx/79xz8jMMIqxRPQMmFj5Y0QHX4z162tvYfxH8ahC9fBOFtw/2MDtxHZF+CICe+L46CoVMXAQepTip289bTNWD7lwyTgc9AMVMlHAtA9dqR7R6XASZOpmccXXhCnhZ/0izSSBIyExeQFgYVfuVc7cOpuZ7f4PSRdHAyELDgrDoF8HJb7Bg8EO87ClQ5pv0HUfwZwr1NAhi27KF0vF3Vh5ZSUZwfnc3hqh3eQHivspBMdo1WYeziik= jumpserver@davionlabs.com
+EOF
+sed -i -r "s/^[[:space:]]*PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+systemctl reload sshd
