@@ -5,7 +5,7 @@
   "disable_host_node_id": true,
   "data_dir": "/consul/data",
   "datacenter": "dc1",
-  "domain": "cluster.local",
+  "domain": "davionlabs.com",
   "retry_join": [
     "10.143.30.12"
   ],
