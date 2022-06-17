@@ -11,7 +11,10 @@
   ],
   "service": {
       "name": "node-exporter-kvm",
-      "port": 9100
+      "port": 9100,
+      "tags":[
+        "shareservice"
+    ]
   },
   "server": true,
   "telemetry": {
