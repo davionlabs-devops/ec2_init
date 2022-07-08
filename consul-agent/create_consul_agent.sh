@@ -61,4 +61,4 @@ docker run -d --name=consul-agent01 \
 -v /etc/consul-agent/:/consul/userconfig/ \
 -v /data/consul-agent01:/data/consul0 \
 -e 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'  \
-consul:1.10.3 agent -advertise=$Def_IP  -config-file=/consul/userconfig/agent.json -data-dir /data/consul0  -node=$(hostname)
+consul:1.12.2 agent -advertise=$Def_IP  -config-file=/consul/userconfig/agent.json -data-dir /data/consul0  -node=$(hostname)

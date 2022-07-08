@@ -1,9 +1,15 @@
 {
   "bootstrap_expect": 1,
+  "acl": {
+    "enabled": true,
+    "default_policy": "deny",
+    "enable_token_persistence": true  
+  },
   "bind_addr": "0.0.0.0",
   "client_addr": "0.0.0.0",
+  "advertise_addr": "10.143.30.12",
   "disable_host_node_id": true,
-  "data_dir": "/consul/data",
+  "data_dir": "/data/consul0",
   "datacenter": "dc1",
   "domain": "davionlabs.com",
   "retry_join": [
@@ -20,7 +26,7 @@
   "telemetry": {
     "prometheus_retention_time": "5m"
   },
-  "log_file": "/consul/data/logs",
+  "log_file": "/data/consul0/logs",
   "log_rotate_bytes": 300000000,
   "log_rotate_duration": "360h",
   "log_level": "info",

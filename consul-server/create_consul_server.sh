@@ -33,4 +33,4 @@ docker run -d --name=consul-server01 \
 -v /data/consul-server01:/data/consul0 \
 --network "host" \
 -e 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'  \
-consul:1.10.3 agent -server -bootstrap-expect=1 -bind=$Def_IP -config-file=/consul/userconfig/server.json -data-dir /data/consul0 -node=consul-server01
+consul:1.12.2 agent -server -bootstrap-expect=1 -bind=$Def_IP -config-file=/consul/userconfig/server.json -data-dir /data/consul0 -node=consul-server01

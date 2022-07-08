@@ -1,6 +1,6 @@
 {
   "bind_addr": "0.0.0.0",
-  "data_dir": "/consul/data",
+  "data_dir": "/data/consul0",
   "datacenter": "dc1",
   "domain": "davionlabs.com",
   "enable_script_checks": true,
@@ -24,10 +24,10 @@
   "telemetry": {
     "prometheus_retention_time": "5m"
   },
-  "log_file": "/consul/data/logs",
+  "log_file": "/data/consul0/logs",
   "log_rotate_bytes": 300000000,
   "log_rotate_duration": "360h",
-  "log_level": "info",
+  "log_level": "error",
   "encrypt": "gEjZMbDxnA5UDS5DJRI3Nn5KvOwdVa46jneHK0gFDa8=",
   "ui_config": {
     "enabled": false
